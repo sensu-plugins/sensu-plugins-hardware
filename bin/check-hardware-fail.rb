@@ -32,7 +32,7 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
   def run
     errors = `dmesg`.lines.grep(/\[Hardware Error\]/)
     # #YELLOW
-    unless errors.empty?  # rubocop:disable IfUnlessModifier
+    unless errors.empty?
       critical 'Hardware Error Detected'
     end
 
