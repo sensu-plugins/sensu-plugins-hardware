@@ -30,12 +30,8 @@ require 'sensu-plugin/check/cli'
 
 class CheckHardwareFail < Sensu::Plugin::Check::CLI
   def run
-    errors = `dmesg`.lines.grep(/\[Hardware Error\]/)
-    # #YELLOW
-    unless errors.empty?
-      critical 'Hardware Error Detected'
-    end
-
+    errors = `dmesg`.lines.select { |l| l['[Hardware Error]'] }
+    critical 'Hardware Error Detected' if errors.any?
     ok 'Hardware OK'
   end
 end
