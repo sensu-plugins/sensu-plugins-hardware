@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-hardware.gemspec
+- gem install sensu-plugins-hardware-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: EBI75bHzj5+6OFryyIAxfsEf7JwESMxKTjJ8kIUG1PiqJfc/7qnPvhxpDZf/IO1EMz7dS7c6S2zriQw86jAPv/wRo1/5gbHhnl9baBCfwKTpXJimyEEqBQPwH0qO1TANP/No+g/ET+zIgghudV8LwEROlsxdOQZOK/KFccb5Qyo=
+  gem: sensu-plugins-hardware
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-hardware
