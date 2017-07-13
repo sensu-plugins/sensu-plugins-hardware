@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+### Added
+- Option to limit the number of lines to be parsed from the dmesg output
+- Option to specify what pattern (regex) to look for in the dmesg output
 
 ## [1.0.0] - 2017-06-14
 ### Added
