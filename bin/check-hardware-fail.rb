@@ -29,9 +29,26 @@ require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-plugin/check/cli'
 
 class CheckHardwareFail < Sensu::Plugin::Check::CLI
+  option :lines,
+         short: '-l NUMBER',
+         long: '--lines NUMBER',
+         proc: proc(&:to_i),
+         default: 0,
+         description: 'Maximum number of lines to read from dmesg, 0 (default) means all'
+
+  option :query,
+         short: '-q QUERY',
+         long: '--query QUERY',
+         default: 'Hardware Error',
+         description: 'What to look for in the output of dmesg'
+
   def run
-    errors = `dmesg`.lines.select { |l| l['[Hardware Error]'] }
-    critical 'Hardware Error Detected' if errors.any?
-    ok 'Hardware OK'
+    errors = if config[:lines] == 0
+               `dmesg`.lines.select { |l| l[/#{config[:query]}/] }
+             else
+               `dmesg | tail -n #{config[:lines]}`.lines.select { |l| l[/#{config[:query]}/] }
+             end
+    critical "Problem Detected: #{config[:query]}" if errors.any?
+    ok 'OK'
   end
 end
