@@ -41,7 +41,7 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
          short: '-q QUERY',
          long: '--query QUERY',
          default: 'Hardware Error',
-         description: 'What to look for in the output of dmesg'
+         description: 'What pattern to look for in the output of dmesg (regex or literal)'
 
   option :invert,
          long: '--invert',
@@ -52,12 +52,12 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
   def run
     cmd = config[:invert] ? 'head' : 'tail'
     errors = if config[:lines] == 0
-               `dmesg`.lines.select { |l| l[/#{config[:query]}/] }
+               output = `dmesg`.lines.select { |l| l[/#{config[:query]}/] }
              else
-               `dmesg | #{cmd} -n #{config[:lines]}`.lines.select { |l| l[/#{config[:query]}/] }
+               output = `dmesg | #{cmd} -n #{config[:lines]}`.lines.select { |l| l[/#{config[:query]}/] }
              end
     unknown 'Command execution failed!' unless $CHILD_STATUS.success?
-    critical "Problem Detected: #{config[:query]}" if errors.any?
+    critical "Problem Detected: #{output[0]}" if errors.any?
     ok 'OK'
   end
 end
