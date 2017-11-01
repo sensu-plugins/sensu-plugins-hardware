@@ -51,13 +51,13 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
 
   def run
     cmd = config[:invert] ? 'head' : 'tail'
-    errors = if config[:lines] == 0
-               output = `dmesg`.lines.select { |l| l[/#{config[:query]}/] }
+    output = if config[:lines].zero?
+               `dmesg`.lines.select { |l| l[/#{config[:query]}/] }
              else
-               output = `dmesg | #{cmd} -n #{config[:lines]}`.lines.select { |l| l[/#{config[:query]}/] }
+               `dmesg | #{cmd} -n #{config[:lines]}`.lines.select { |l| l[/#{config[:query]}/] }
              end
     unknown 'Command execution failed!' unless $CHILD_STATUS.success?
-    critical "Problem Detected: #{output[0]}" if errors.any?
+    critical "Problem Detected: #{output[0]}" if output.any?
     ok 'OK'
   end
 end
