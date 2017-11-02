@@ -1,9 +1,12 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
+This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+
+### Changed
+- updated changelog guidelines location (@majormoses)
 
 ## [1.2.0] - 2017-11-02
 ### Changed
