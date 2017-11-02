@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+### Changed
+- check-hardware-fail.rb: Return the actual and entire query line match if found (@phantasm66)
+
 ## [1.1.0] - 2017-07-17
 ### Added
 - Option to limit the number of lines to be parsed from the dmesg output
