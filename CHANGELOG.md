@@ -5,10 +5,6 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
-## [1.1.1] - 2017-11-01
-### Changed
-- Return the actual and entire query line match if found
-
 ## [1.1.0] - 2017-07-17
 ### Added
 - Option to limit the number of lines to be parsed from the dmesg output
