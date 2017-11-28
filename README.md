@@ -7,6 +7,7 @@
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-hardware.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-hardware)
 
 ## Functionality
+**check-hardware-fail** will lookup in the output of `dmesg` for lines matching a provided query, it accepts `--facility`, `--level` and `--kernel` options to run `dmesg` command. Returns CRITICAL if any occurrence is found and UNKNOWN if provided options are invalid or the command execution fails.
 
 ## Files
  * bin/check-hardware-fail
