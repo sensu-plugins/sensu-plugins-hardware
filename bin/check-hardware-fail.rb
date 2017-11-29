@@ -87,15 +87,16 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
     lines = `#{cmd}`.lines
     unknown 'Command execution failed!' unless $CHILD_STATUS.success?
 
-    # Option --invert
-    lines.reverse! unless config[:invert]
-
     if config[:seconds]
       uptime = File.read('/proc/uptime').split(' ').first.to_i
       seconds_limit = uptime - config[:seconds]
     end
 
+    # Option --invert
+    lines.reverse! unless config[:invert]
+
     output = []
+
     lines.each_with_index do |line, index|
       break if config[:lines] && index >= config[:lines]
       if config[:seconds]
