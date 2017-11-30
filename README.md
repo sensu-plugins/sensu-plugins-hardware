@@ -13,6 +13,7 @@
  * bin/check-hardware-fail
 
 ## Usage
+```
 Usage: ./check-hardware-fail.rb (options)
     -f FACILITY[,FACILITY],          Restrict output to defined facilities. Supported log facilities: kern,user,mail,daemon,auth,syslog,lpr,news
         --facility
@@ -22,7 +23,7 @@ Usage: ./check-hardware-fail.rb (options)
     -l, --lines NUMBER               Maximum number of lines to read from dmesg, 0 (default) means all
     -q, --query QUERY                What pattern to look for in the output of dmesg (regex or literal)
     -s, --seconds SECONDS            Amount of seconds to lookbehind from dmesg output. This option is incompatible with --lines
-
+```
 
 Example of usage:
 
