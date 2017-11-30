@@ -4,9 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+### Added
+- Options `--facility`, `--level` and `--kernel` to restrict dmesg output on linux OS (@epierotto)
+- Option `--seconds` to specify the amount of seconds to lookbehind on dmesg output on linux OS (@epierotto)
+- Options validation to prevent running incompatible arguments (@epierotto)
 
 ### Changed
 - updated changelog guidelines location (@majormoses)
+- Replaced the use of `tail` and `head` commands when specifying the option `--invert`, now uses pure ruby (@epierotto)
+- Updated rubocop version to 0.49.0 (@epierotto)
+- Rubocop test pass (@epierotto)
 
 ## [1.2.0] - 2017-11-02
 ### Changed
