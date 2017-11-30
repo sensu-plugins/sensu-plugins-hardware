@@ -36,14 +36,13 @@ Check the last 100 lines for 'killed as a result of limit'
 check-hardware-fail.rb -l 100 -q 'killed as a result of limit'
 ```
 
-Only on linux OS:
 
 The following options are only available for linux OS:
 
-`--seconds` Amount of seconds to lookbehind from dmesg output. This option is incompatible with --lines
-`--facility` Restrict output to defined facilities. Supported log facilities: kern,user,mail,daemon,auth,syslog,lpr,news
-`--level` Restrict output to defined levels, otherwise all levels are included. Supported log levels: emerg,alert,crit,err,warn,notice,info,debug
-`--kernel` Include kernel messages
+* `--seconds` Amount of seconds to lookbehind from dmesg output. This option is incompatible with --lines
+* `--facility` Restrict output to defined facilities. Supported log facilities: kern,user,mail,daemon,auth,syslog,lpr,news
+* `--level` Restrict output to defined levels, otherwise all levels are included. Supported log levels: emerg,alert,crit,err,warn,notice,info,debug
+* `--kernel` Include kernel messages
 
 Check the last 300 seconds for 'killed as a result of limit'
 ```
