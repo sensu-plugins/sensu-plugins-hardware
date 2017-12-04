@@ -93,6 +93,8 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
     end
 
     # Option --invert
+    # Flipping the array to start the iteration from the last line (newest entry)
+    # unless `--invert` which means that you want to start reading from the first line (oldest entry)
     lines.reverse! unless config[:invert]
 
     output = []
