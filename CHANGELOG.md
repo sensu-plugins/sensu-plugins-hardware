@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+
+## [1.3.0] - 2017-12-05
 ### Added
 - Options `--facility`, `--level` and `--kernel` to restrict dmesg output on linux OS (@epierotto)
 - Option `--seconds` to specify the amount of seconds to lookbehind on dmesg output on linux OS (@epierotto)
@@ -54,7 +56,8 @@ This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://g
 ### Changed
 - removed cruft from /lib
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/0.0.4...1.0.0
