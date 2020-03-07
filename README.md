@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hardware/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hardware)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hardware/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-hardware)
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-hardware.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-hardware)
+[![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/ivoamorim/sensu-plugins-hardware)
 
 ## Functionality
 **check-hardware-fail** will lookup in the output of `dmesg` for lines matching a provided query, it accepts `--facility`, `--level` and `--kernel` options to run `dmesg` command. Returns CRITICAL if any occurrence is found and UNKNOWN if provided options are invalid or the command execution fails.
