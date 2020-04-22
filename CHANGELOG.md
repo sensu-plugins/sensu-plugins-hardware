@@ -5,6 +5,20 @@ This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://g
 
 ## [Unreleased]
 
+### Breaking Changes
+- Update minimum required ruby version to 2.3. Drop unsupported ruby versions.
+- Bump `sensu-plugin` dependency from `~> 1.2` to `~> 4.0`
+
+### Added
+- Bonsai asset support
+### Changed
+- Updated bundler dependancy to '~> 2.1'
+- Updated rubocop dependency to '~> 0.81.0'
+- Remediated rubocop issues
+- Updated os dependency to '>= 0.9.6', '< 1.2.0'
+- Updated codeclimate-test-reporter to '~> 1.0'
+- Updated rake dependency to '~> 13.0'
+
 ## [1.3.0] - 2017-12-05
 ### Added
 - Options `--facility`, `--level` and `--kernel` to restrict dmesg output on linux OS (@epierotto)

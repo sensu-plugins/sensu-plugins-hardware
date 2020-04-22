@@ -1,4 +1,6 @@
 #! /usr/bin/env ruby
+# frozen_string_literal: true
+
 #
 #   check-hardware-fail
 #
@@ -101,6 +103,7 @@ class CheckHardwareFail < Sensu::Plugin::Check::CLI
 
     lines.each_with_index do |line, index|
       break if config[:lines] && index >= config[:lines]
+
       if config[:seconds]
         timestamp = line.split(']').first.delete('[').to_i
         break if timestamp < seconds_limit
