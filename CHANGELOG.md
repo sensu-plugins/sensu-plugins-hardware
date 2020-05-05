@@ -5,7 +5,7 @@ This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://g
 
 ## [Unreleased]
 
-## [2.0.0] - 2020-04-27
+## [2.0.0] - 2020-05-05
 ### Breaking Changes
 - Update minimum required ruby version to 2.3. Drop unsupported ruby versions.
 - Bump `sensu-plugin` dependency from `~> 1.2` to `~> 4.0`
