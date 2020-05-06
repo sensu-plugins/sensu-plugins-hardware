@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://g
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-05-05
 ### Breaking Changes
 - Update minimum required ruby version to 2.3. Drop unsupported ruby versions.
 - Bump `sensu-plugin` dependency from `~> 1.2` to `~> 4.0`
@@ -70,7 +71,8 @@ This CHANGELOG follows the format listed at [Our CHANGELOG Guidelines](https://g
 ### Changed
 - removed cruft from /lib
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.3.0...2.0.0
 [1.3.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-hardware/compare/1.0.0...1.1.0
